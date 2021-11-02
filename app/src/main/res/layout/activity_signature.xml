@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_signature"
+    tools:context=".SignatureActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:paddingBottom="50dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout android:id="@+id/containerSignaturePad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.github.gcacace.signaturepad.views.SignaturePad
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/objSignaturePad"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnSaveSignature"
+                android:layout_below="@+id/objSignaturePad"
+                android:onClick="OnSaveSignatureClick"
+                android:layout_alignParentLeft="true"
+                android:text="Save"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnClearSignature"
+                android:onClick="OnClearSignatureClick"
+                android:layout_below="@+id/objSignaturePad"
+                android:layout_alignParentRight="true"
+                android:text="Clear"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnViewSignature"
+                android:onClick="OnViewSignatureClick"
+                android:layout_below="@+id/btnSaveSignature"
+                android:text="View"
+                />
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
+
