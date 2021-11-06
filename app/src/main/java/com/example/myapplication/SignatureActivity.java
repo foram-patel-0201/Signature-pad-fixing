@@ -89,6 +89,13 @@ public class SignatureActivity extends AppCompatActivity {
     }
 
     public void OnViewSignatureClick(View v) {
+
+        Bitmap signatureBitmap = objSignaturePad.getSignatureBitmap();
+        if (addJpgSignatureToGallery(signatureBitmap)) {
+            Toast.makeText(SignatureActivity.this, "Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(SignatureActivity.this, "Unable to store the signature", Toast.LENGTH_SHORT).show();
+        }
         Intent i=new Intent(this,ViewSignatureActivity.class);
         i.putExtra("SignaturePath",path);
         startActivity(i);
